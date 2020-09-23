@@ -1,10 +1,10 @@
 <template>
 <form @submit.prevent="submitForm" class="mt-5 md:mt-20">
 
-  <div class="container mx-auto max-w-screen-sm px-5">
+  <div class="container max-w-screen-sm px-5 mx-auto">
     <div class="space-y-5">
       <!-- Title -->
-      <h1 class="title text-xl font-bold">
+      <h1 class="text-xl font-bold title">
         Vue client to Node/Express/Mongo API
       </h1>
 
@@ -22,7 +22,7 @@
       />
 
       <!-- Submit -->
-      <button type="submit" class="px-4 py-2 lg:px-6 text-xl bg-purple-800 hover:bg-purple-900 font-bold rounded text-white">Send</button>
+      <button type="submit" class="px-4 py-2 text-xl font-bold text-white bg-purple-800 rounded lg:px-6 hover:bg-purple-900">Send</button>
       
     </div>
   </div>
@@ -39,6 +39,9 @@ export default {
         subscribedToChannel: '',
       }
     }
+  },
+  mounted(){
+    console.log('API URL : ', this.$config.apiUrl);
   },
   methods:{
     async submitForm(){    
